@@ -8,4 +8,10 @@ describe(Patient) do
       expect(patient1).to(eq(patient2))
     end
   end
+
+  describe('.all') do
+    it('returns an empty list of patients at first') do
+      expect(Patient.all()).to(eq([]))
+    end
+  end
 end

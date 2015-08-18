@@ -4,11 +4,11 @@ require("doctor")
 require("patient")
 require('pry')
 
-DB = PG.connect({:dbname => "to_do_test"})
+DB = PG.connect({:dbname => "doctors_office_test"})
 
 RSpec.configure do |config|
   config.after(:each) do
-    DB.exec("DELETE FROM lists *;")
-    DB.exec("DELETE FROM tasks *;")
+    DB.exec("DELETE FROM doctor *;")
+    DB.exec("DELETE FROM patient *;")
   end
 end
