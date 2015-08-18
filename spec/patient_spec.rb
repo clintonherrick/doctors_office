@@ -52,4 +52,11 @@ describe(Patient) do
       expect(test_patient.doctor_id()).to(eq(1))
     end
   end
+
+  describe('#birthdate') do
+    it('returns the birthdate of the patient') do
+      test_patient = Patient.new({:name => "Clinton", :birthdate => '1990-01-01', :doctor_id => 1, :id => nil})
+      expect(test_patient.birthdate()).to(eq('1990-01-01'))
+    end
+  end
 end
