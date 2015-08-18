@@ -46,4 +46,10 @@ describe(Patient) do
     end
   end
 
+  describe('#doctor_id') do
+    it('lets you read the doctor id of the patient') do
+      test_patient = Patient.new({:name => "Clinton", :birthdate => '1990-01-01', :doctor_id => 1, :id => nil})
+      expect(test_patient.doctor_id()).to(eq(1))
+    end
+  end
 end
