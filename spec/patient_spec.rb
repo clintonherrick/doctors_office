@@ -22,7 +22,13 @@ describe(Patient) do
     end
   end
 
-
+  describe('#id') do
+    it('sets the patient id when you save it') do
+      test_patient = Patient.new({:name => "Clinton", :birthdate => '1990-01-01', :doctor_id => 1, :id => nil})
+      test_patient.save()
+      expect(test_patient.id()).to(be_an_instance_of(Fixnum))
+    end
+  end
 
 
 end

@@ -24,4 +24,10 @@ class Patient
     patient
   end
 
+
+  define_method(:save) do
+    result = DB.exec("INSERT INTO patient (name, birthdate, doctor_id)VALUES ('#{@name}', '#{@birthdate}', '#{@doctor_id}') RETURNING id;")
+    @id  = result.first().fetch("id").to_i()
+  end
+
 end
