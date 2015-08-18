@@ -30,5 +30,20 @@ describe(Patient) do
     end
   end
 
+  describe('#save') do
+    it('adds a patient to the array of saved patients') do
+      test_patient = Patient.new({:name => "Clinton", :birthdate => '1990-01-01', :doctor_id => 1, :id => nil})
+      test_patient.save()
+      expect(Patient.all()).to(eq([test_patient]))
+    end
+  end
+
+  describe(".clear") do
+    it("empties out all of the saved patients") do
+      Patient.new({:name => "Clinton", :birthdate => '1990-01-01', :doctor_id => 1, :id => nil})
+      Patient.clear()
+      expect(Patient.all()).to(eq([]))
+    end
+  end
 
 end
